@@ -1,0 +1,72 @@
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-md w-full mx-auto space-y-8">
+    <h1 class="text-3xl font-bold text-center text-gray-900 font-sans">
+      Cadastro de Motoboy
+    </h1>
+    
+    <form action="/motoboy" method="POST" enctype="multipart/form-data" class="mt-8 space-y-6">
+      <div class="space-y-4">
+        <div>
+          <input 
+            type="text"
+            name="nome"
+            placeholder="Seu nome"
+            required
+            class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-base"
+          />
+        </div>
+
+        <div>
+          <input
+            type="text"
+            name="cidade"
+            placeholder="Cidade"
+            required
+            class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-base"
+          />
+        </div>
+
+        <div>
+          <input
+            type="text"
+            name="tipo_veiculo"
+            placeholder="Tipo de veículo (moto, bike, etc)"
+            required
+            class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-base"
+          />
+        </div>
+
+        <div>
+          <input
+            type="email"
+            name="email"
+            placeholder="E-mail"
+            required
+            class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-base"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">
+            Documento (CNH ou outro)
+          </label>
+          <input
+            type="file"
+            name="documento"
+            required
+            class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+          />
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out"
+      >
+        Cadastrar
+      </button>
+    </form>
+  </div>
+</div>

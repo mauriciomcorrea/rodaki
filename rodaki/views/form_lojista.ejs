@@ -1,0 +1,90 @@
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-md w-full mx-auto space-y-8">
+    <h1 class="text-3xl font-bold text-center text-gray-900 font-sans">
+      Cadastro de Lojista / Operador
+    </h1>
+
+    <% if (mensagemErro) { %>
+        <div class="bg-red-100 text-red-700 px-4 py-3 rounded mb-4 text-center">
+          <%= mensagemErro %>
+        </div>
+      <% } %>
+      
+      <% if (mensagemSucesso) { %>
+        <div class="bg-green-100 text-green-700 px-4 py-3 rounded mb-4 text-center">
+          <%= mensagemSucesso %>
+        </div>
+      <% } %>
+      
+    <form action="/cadastro-lojista" method="POST" class="mt-8 space-y-6">
+      <div class="space-y-4">
+        <div>
+          <input 
+            type="text" 
+            name="nome" 
+            placeholder="Seu nome" 
+            required
+            class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-base"
+          />
+        </div>
+
+        <div>
+          <input 
+            type="text" 
+            name="empresa" 
+            placeholder="Nome da empresa (opcional)"
+            class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-base"
+          />
+        </div>
+
+        <div>
+          <input 
+            type="text" 
+            name="cidade" 
+            placeholder="Cidade" 
+            required
+            class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-base"
+          />
+        </div>
+
+        <div>
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="E-mail" 
+            required
+            class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-base"
+          />
+        </div>
+
+        <div>
+          <input 
+            type="text" 
+            name="tipo_operacao" 
+            placeholder="Tipo de operação (loja, autopeças, etc.)"
+            class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-base"
+          />
+        </div>
+
+        <div>
+          <input 
+            type="password" 
+            name="senha" 
+            placeholder="Crie uma senha"
+            required
+            class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-base"
+          />
+        </div>
+      </div>
+
+      <button 
+        type="submit"
+        class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out"
+      >
+        Cadastrar
+      </button>
+    </form>
+  </div>
+</div>

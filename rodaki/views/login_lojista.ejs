@@ -1,0 +1,40 @@
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-md w-full mx-auto space-y-8">
+    <h1 class="text-3xl font-bold text-center text-gray-900 mb-8">
+      Login do Lojista
+    </h1>
+
+    <form action="/login-lojista" method="POST" class="mt-8 space-y-6">
+      <div class="space-y-4">
+        <div>
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="E-mail"
+            required
+            class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-base"
+          />
+        </div>
+
+        <div>
+          <input 
+            type="password" 
+            name="senha" 
+            placeholder="Senha"
+            required
+            class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-base"
+          />
+        </div>
+      </div>
+
+      <button 
+        type="submit"
+        class="w-full mt-4 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-150 ease-in-out"
+      >
+        Entrar
+      </button>
+    </form>
+  </div>
+</div>

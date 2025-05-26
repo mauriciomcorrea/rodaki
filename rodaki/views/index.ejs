@@ -1,0 +1,61 @@
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div class="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 py-10 px-6 space-y-12">
+
+  <!-- Cabeçalho -->
+  <div class="text-center">
+    <h1 class="text-4xl font-bold text-gray-800 mb-2">Bem-vindo ao Rodaki</h1>
+    <p class="text-gray-600 text-lg">Conectamos motoboys e lojistas de forma rápida e segura.</p>
+  </div>
+
+  <!-- Seções de Acesso -->
+  <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+    <!-- Motoboy -->
+    <div class="bg-white shadow-lg rounded-xl p-8 space-y-4 border-l-4 border-blue-500">
+      <h2 class="text-2xl font-bold text-blue-600">Sou Motoboy</h2>
+      <p class="text-gray-600">Acesse sua conta ou cadastre-se para visualizar detalhes das vagas.</p>
+      <div class="space-y-2">
+        <a href="/motoboy" class="block w-full text-center bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Cadastrar</a>
+        <a href="/login-motoboy" class="block w-full text-center border border-blue-600 text-blue-600 py-2 rounded hover:bg-blue-50">Login</a>
+        <a href="/painel-motoboy" class="block w-full text-center text-sm text-blue-500 hover:underline">Acessar meu painel</a>
+      </div>
+    </div>
+
+    <!-- Lojista -->
+    <div class="bg-white shadow-lg rounded-xl p-8 space-y-4 border-l-4 border-green-500">
+      <h2 class="text-2xl font-bold text-green-600">Sou Lojista</h2>
+      <p class="text-gray-600">Cadastre vagas para sua operação e encontre entregadores.</p>
+      <div class="space-y-2">
+        <a href="/cadastro-lojista" class="block w-full text-center bg-green-600 text-white py-2 rounded hover:bg-green-700">Cadastrar</a>
+        <a href="/login-lojista" class="block w-full text-center border border-green-600 text-green-600 py-2 rounded hover:bg-green-50">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vagas disponíveis -->
+  <div class="max-w-6xl mx-auto mt-16">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">Vagas disponíveis</h2>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <% vagas.forEach(vaga => { %>
+        <div class="bg-white shadow-md rounded-xl p-5 border hover:shadow-xl transition">
+          <div class="mb-2 text-sm text-gray-500"><%= vaga.cidade %></div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2"><%= vaga.tipo_entregador %></h3>
+          <p class="text-gray-600 text-sm mb-4"><%= vaga.condicoes %></p>
+          <div class="text-gray-500 text-sm mb-4"><%= vaga.detalhes %></div>
+
+          <% if (!session.motoboyId) { %>
+            <a href="/login-motoboy" class="block text-center w-full py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+              Fazer login para se candidatar
+            </a>
+          <% } else { %>
+            <form action="/vaga/<%= vaga.id %>/candidatar" method="GET">
+              <button class="w-full py-2 bg-green-600 text-white rounded hover:bg-green-700 transition">Me candidatar</button>
+            </form>
+          <% } %>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+
+</div>

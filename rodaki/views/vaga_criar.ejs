@@ -1,0 +1,34 @@
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div class="min-h-screen bg-gray-100 flex items-center justify-center px-4">
+  <div class="max-w-xl w-full bg-white p-8 rounded-xl shadow-lg space-y-6 mt-10">
+
+    <h1 class="text-2xl font-bold text-gray-800 text-center">Criar Nova Vaga</h1>
+
+    <form action="/vaga/nova" method="POST" class="space-y-5">
+      <div>
+        <label for="cidade" class="block text-sm font-medium text-gray-700 mb-1">Cidade da vaga</label>
+        <input type="text" id="cidade" name="cidade" required class="w-full border border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500" />
+      </div>
+
+      <div>
+        <label for="tipo_entregador" class="block text-sm font-medium text-gray-700 mb-1">Tipo de entregador (moto, bike, etc)</label>
+        <input type="text" id="tipo_entregador" name="tipo_entregador" required class="w-full border border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500" />
+      </div>
+
+      <div>
+        <label for="condicoes" class="block text-sm font-medium text-gray-700 mb-1">Condições de trabalho (pagamento, horário, etc)</label>
+        <input type="text" id="condicoes" name="condicoes" required class="w-full border border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500" />
+      </div>
+
+      <div>
+        <label for="detalhes" class="block text-sm font-medium text-gray-700 mb-1">Mais detalhes da vaga</label>
+        <textarea id="detalhes" name="detalhes" rows="4" class="w-full border border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500"></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition font-semibold">
+        Publicar Vaga
+      </button>
+    </form>
+  </div>
+</div>

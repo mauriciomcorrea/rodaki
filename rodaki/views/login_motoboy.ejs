@@ -1,0 +1,22 @@
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div class="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+  <div class="bg-white shadow-lg rounded-xl p-8 max-w-md w-full">
+    <h2 class="text-2xl font-bold mb-6 text-center text-blue-600">Login do Motoboy</h2>
+
+    <% if (erro) { %>
+      <div class="bg-red-100 text-red-600 p-3 rounded mb-4 text-center"><%= erro %></div>
+    <% } %>
+
+    <form action="/login-motoboy" method="POST" class="space-y-4">
+      <input type="email" name="email" placeholder="E-mail"
+        class="w-full border px-4 py-2 rounded focus:ring focus:ring-blue-300" required />
+
+      <input type="password" name="senha" placeholder="Senha"
+        class="w-full border px-4 py-2 rounded focus:ring focus:ring-blue-300" required />
+
+      <button type="submit"
+        class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Entrar</button>
+    </form>
+  </div>
+</div>
